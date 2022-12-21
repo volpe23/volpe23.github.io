@@ -2,7 +2,8 @@ const choices = ['rock', 'paper', 'scissors'];
 
 let playerScore = 0;
 let computerScore = 0;
-
+const showChoices = document.querySelector("#showChoices");
+const showResult = document.querySelector("#showResult");
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)].toLowerCase();
@@ -17,26 +18,33 @@ function playerChoice(value) {
 
 function playRound(playerSelection, computerSelection) {
     const match = choices.indexOf(playerSelection) - choices.indexOf(computerSelection)
-    if (match === 0) {
-        console.log("Tie!");
-        // return 2;
-    }
+    showChoices.textContent = `${playerSelection} vs ${computerSelection}`
     let winner = (match === -2 || match === 1) ? true : false;
-    if (winner) {
-        console.log(`You win! ${playerSelection} beats ${computerSelection}`);
-        console.log(`Current score - ${playerScore} : ${computerScore}`);
+    if (match === 0) {
+        showResult.textContent = "Tie!";
+    }
+    else if (winner) {
+        const firstLetter = playerSelection.charAt(0).toUpperCase()
+        const remainingLetters = playerSelection.slice(1)
+        showResult.textContent = `You win! ${firstLetter + remainingLetters} beats ${computerSelection}`;
         playerScore++;
         // return true;
     }
     else {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}`);
-        console.log(`Current score - ${playerScore} : ${computerScore}`);
+        const firstLetter = computerSelection.charAt(0).toUpperCase()
+        const remainingLetters = computerSelection.slice(1)
+        showResult.textContent = `You lose! ${firstLetter + remainingLetters} beats ${playerSelection}`;
+        // console.log(`Current score - ${playerScore} : ${computerScore}`);
         computerScore++;
         // return false;
     }
+
     updateScore();
     if (isWinner()) {
+        showResult.textContent = `${isWinner()} wins!`
+        start.textContent = "Play again?"
         start.classList.remove("show-hide");
+        console.log("We have a winner")
     }
 }
 
@@ -45,6 +53,7 @@ function newGame() {
     computerScore = 0;
     updateScore()
     start.classList.add("show-hide");
+    if (start.textContent === "start") eventsOnButtons()
 }
 const playerScoreEl = document.querySelector("#player-score");
 const computerScoreEl = document.querySelector("#computer-score");
@@ -57,8 +66,9 @@ function updateScore() {
     
 }
 function isWinner() {
-    console.log("We have winner")
-    return playerScore >= 5 || computerScore >= 5 ? true : false
+    if (playerScore >= 5) return 'Player'
+    else if (computerScore >= 5) return 'Computer'
+    return false
 }
 
 function eventsOnButtons() {
@@ -71,5 +81,5 @@ function eventsOnButtons() {
 }
 start = document.querySelector("#start");
 start.addEventListener('click', newGame)
-eventsOnButtons()
-newGame()
+// eventsOnButtons()
+// newGame()

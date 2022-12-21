@@ -15,39 +15,39 @@
     </header>
     <main>
         <div class="result-bar">
-            <div class="score">
-                <h1>SCORE</h1>
-                <button class="start-button show-hide" id="start" type="button" >START</button>
+            <div class="text-info">
+                <h1 class="score-text">SCORE</h1>
+                <h1 id="showChoices"></h1>
+                <h1 id="showResult"></h1>
+                <button class="start-button" id="start" type="button" >start</button>
             </div>
             <div class="scoreboard">
                 <div class="result" id="player-result">
-                    <h2>Player</h2>
-                    <h2 id="player-score">0</h2>
+                    <h2 class="player">player</h2>
+                    <h2 class="score" id="player-score">0</h2>
                     
                 </div>
                 <div class="result" id="computer-result">
-                    <h2>Computer</h2>
-                    <h2 id="computer-score">0</h2>
+                    <h2 class="player">computer</h2>
+                    <h2 class="score" id="computer-score">0</h2>
                 </div>
             </div>
         </div>
         <div class="buttons">
             <div  id="rock">
-                <button class="btn" type="button" value="rock"><img class="image" src="download.png"></button>
+                <button class="btn" type="button" value="rock">
+                    <i class="fa-solid fa-hand-back-fist choice"></i>
+                </button>
             </div>
             <div  id="paper">
-                <button class="btn" type="button" value="paper"><img class="image" src="pap(1).png"></button>
+                <button class="btn" type="button" value="paper">
+                    <i class="fa-solid fa-hand choice"></i>
+                </button>
             </div>
             <div  id="scissors">
                 
-                <button class="btn" type="button" value="scissors"><img class="image" src="scis.png"></button>
-                <i class="fa-duotone fa-hand-horns"></i>
-                <button class="btn">
-                    <i class="fa-solid fa-hand-back-fist" style="font-size: 90px; color: red; background-color: white;"></i>
-                    <i class="fa-solid fa-scissors"></i>
-                    <i class="fa-solid fa-scroll"></i>
-                    <i class="fa-solid fa-hand"></i>
-                    <i class="fa-solid fa-hand-scissors"></i>
+                <button class="btn" type="button" value="scissors"> 
+                    <i class="fa-solid fa-hand-scissors choice"></i>
                 </button>
             </div>
         </div>

@@ -3,37 +3,62 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    
+}
+body {
+    background: linear-gradient(109.6deg, rgb(23, 30, 39) 11.2%, rgb(14, 33, 53) 51.2%, rgb(0, 0, 0) 98.6%);
 }
 header {
+    /* background-color: rgb(46, 46, 46); */
+    color: #ddd;
+    font-weight: 00;
     text-align: center;
     font-size: 86px;
-
+    padding: 30px 0;
 }
 .result-bar {
     display: grid;
     flex-direction: column;
     place-items: center;
     /* justify-content: center; */
+    text-align: center;
     gap: 30px;
     padding: 50px 0;
-    background-color: rgb(20, 31, 41);
+    /* background-color: rgb(2, 48, 90); */
     color: #eee;
+}
+.text-info {
+    margin: 50px 0;
 }
 .scoreboard {
     display: flex;
-    gap: 50px;
+    gap: 40px;
+}
+#showChoices {
+    margin-bottom: 15px;
 }
 .start-button {
-    width: 100px;
-    height: 30px;
+    width: 200px;
+    height: 100px;
+    font-size: 40px;
     background-color: rgb(21, 206, 21);
     border: 2px solid rgb(218, 196, 196);
     border-radius: 6px;
+    margin-top: 25px;
+}
+.score-text {
+    font-size: 80px;
+    margin-bottom: 20px;
 }
 .result {
-    width: 120px;
-    text-align: center;
+    width: 250px;
     margin: 0;
+}
+.player {
+    font-size: 50px;
+}
+.score {
+    font-size: 90px;
 }
 #player-score, #computer-score {
     display: block;
@@ -41,31 +66,45 @@ header {
 }
 
 .buttons {
+    background-color: rgba(41, 39, 39, 0);
     display: flex;
     justify-content: center;
     flex-direction: row;
     gap: 20px;
-    margin: 30px 0;
+    padding: 50px 0;
 }
-.image {
+.choice {
+    font-size: 120px;
+    color: rgb(12, 219, 209);
     
+}
+.btn {
+    position: relative;
+    /* background-color: rgba(182, 182, 182, 0.685); */
+    background: linear-gradient(to right, rgba(219,227,230,0.4), rgba(146, 160, 209, 0.4));
+    color: white;
+    border: 2px solid rgb(186, 206, 199);
+    border-radius: 45px;
     width: 200px;
     height: 200px;
 }
-.btn {
-    background-color: rgba(185, 185, 185, 0.685);
-    color: white;
-    border: 2px solid rgb(80, 79, 79);
-    border-radius: 10px;
+.btn span {
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    transform: translate(-50%, -50%);
 }
 .btn:hover {
     cursor: pointer;
-    background-color: rgba(146, 146, 146, 0.884);
+    background-color: rgba(149, 155, 154, 0.959);
     transform: scale(1.1);
-    border: 3px solid black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+    border: 3px solid rgb(0, 237, 245);
+    box-shadow: 0 4px 8px 0px rgba(33, 248, 248, 0.3), 0 6px 20px 0 rgba(4, 255, 234, 0.25);
 }
 
 .show-hide {
-    visibility: hidden;
+    display: none;
 }
