@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/901d5e8d42.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Rock - Paper - Scissors</title>
 </head>
 <body>
+    <header>
+        rock paper scissors
+    </header>
     <main>
         <div class="result-bar">
             <div class="score">
@@ -18,6 +23,7 @@
                 <div class="result" id="player-result">
                     <h2>Player</h2>
                     <h2 id="player-score">0</h2>
+                    
                 </div>
                 <div class="result" id="computer-result">
                     <h2>Computer</h2>
@@ -27,18 +33,28 @@
         </div>
         <div class="buttons">
             <div  id="rock">
-                <button class="btn" type="button" value="rock"><img src="download.png"></button>
+                <button class="btn" type="button" value="rock"><img class="image" src="download.png"></button>
             </div>
             <div  id="paper">
-                <button class="btn" type="button" value="paper"><img src="pap(1).png"></button>
+                <button class="btn" type="button" value="paper"><img class="image" src="pap(1).png"></button>
             </div>
             <div  id="scissors">
                 
-                <button class="btn" type="button" value="scissors"><img src="scis.png"></button>
+                <button class="btn" type="button" value="scissors"><img class="image" src="scis.png"></button>
+                <i class="fa-duotone fa-hand-horns"></i>
+                <button class="btn">
+                    <i class="fa-solid fa-hand-back-fist" style="font-size: 90px; color: red; background-color: white;"></i>
+                    <i class="fa-solid fa-scissors"></i>
+                    <i class="fa-solid fa-scroll"></i>
+                    <i class="fa-solid fa-hand"></i>
+                    <i class="fa-solid fa-hand-scissors"></i>
+                </button>
             </div>
         </div>
     </main>
+    <footer>
 
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
