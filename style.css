@@ -26,11 +26,14 @@
     border-radius: 6px;
 }
 .result {
+    width: 120px;
     text-align: center;
     margin: 0;
 }
-
-
+#player-score, #computer-score {
+    display: block;
+    margin-top: 10px;
+}
 
 .buttons {
     display: flex;
@@ -54,4 +57,8 @@ button img {
     transform: scale(1.1);
     border: 3px solid black;
     box-shadow: rgb(20, 31, 41) 3px;
+}
+
+.show-hide {
+    visibility: hidden;
 }
