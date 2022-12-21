@@ -4,9 +4,8 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)].toLowerCase();
 }
 
-function playerChoice() {
-    player = prompt("What do you chose?").toLowerCase()
-    if (choices.includes(player)) return player;
+function playerChoice(value) {
+    if (choices.includes(value)) return value;
     else return console.error("Wrong input!");
 }
 function playRound(playerSelection, computerSelection) {
@@ -47,3 +46,14 @@ function game() {
     else console.log("You lose! Computer wins!");
     
 }
+
+function eventsOnButtons() {
+    buttons = document.querySelectorAll(".btn");
+    buttons.forEach(el => {
+        el.addEventListener('click', () => {
+            console.log(el.value)
+            return el.value
+        })
+    });
+}
+eventsOnButtons()
