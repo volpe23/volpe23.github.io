@@ -44,15 +44,15 @@ function game() {
     if (score > 0) console.log("You win the game!");
     else if (score === 0) console.log("It\'s a tie!");
     else console.log("You lose! Computer wins!");
-    
 }
 
 function eventsOnButtons() {
     buttons = document.querySelectorAll(".btn");
+    start = document.querySelector("#start");
+    start.addEventListener('click', () => game())
     buttons.forEach(el => {
         el.addEventListener('click', () => {
-            console.log(el.value)
-            return el.value
+            playRound(el.value, getComputerChoice())
         })
     });
 }

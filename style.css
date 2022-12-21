@@ -18,7 +18,15 @@
     display: flex;
     gap: 50px;
 }
+.start-button {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(21, 206, 21);
+    border: 2px solid rgb(218, 196, 196);
+    border-radius: 6px;
+}
 .result {
+    text-align: center;
     margin: 0;
 }
 
