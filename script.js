@@ -9,8 +9,6 @@ function playerChoice() {
     if (choices.includes(player)) return player;
     else return console.error("Wrong input!");
 }
-
-console.log(getComputerChoice())
 function playRound(playerSelection, computerSelection) {
     const match = choices.indexOf(playerSelection) - choices.indexOf(computerSelection)
     if (match === 0) {
