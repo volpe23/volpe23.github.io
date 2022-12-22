@@ -49,10 +49,19 @@ function newGame() {
     computerScore = 0;
     updateScore()
     start.classList.add("show-hide");
-    showChoices.textContent = "Game started!"
-    showResult.textContent = "pick your choice"
+
+    
+
+    showChoices.classList.add("fall-animation");
+    showResult.classList.add("expand-animation");
+
+    showChoices.textContent = "Game started!";
+    showResult.textContent = "pick your choice";
+    
     showResult.style.fontSize = "2em";
     if (start.textContent === "start") eventsOnButtons()
+
+    
 }
 const playerScoreEl = document.querySelector("#player-score");
 const computerScoreEl = document.querySelector("#computer-score");
@@ -63,6 +72,8 @@ function updateScore() {
 }
 
 function isWinner() {
+    showChoices.classList.remove("fall-animation");
+    showResult.classList.remove("expand-animation");
     if (playerScore >= 5) return 'Player'
     else if (computerScore >= 5) return 'Computer'
     return false
