@@ -14,8 +14,6 @@ function playerChoice(value) {
     else return console.error("Wrong input!");
 }
 
-
-
 function playRound(playerSelection, computerSelection) {
     const match = choices.indexOf(playerSelection) - choices.indexOf(computerSelection)
     showChoices.textContent = `${playerSelection} vs ${computerSelection}`
@@ -28,23 +26,21 @@ function playRound(playerSelection, computerSelection) {
         const remainingLetters = playerSelection.slice(1)
         showResult.textContent = `You win! ${firstLetter + remainingLetters} beats ${computerSelection}`;
         playerScore++;
-        // return true;
     }
     else {
         const firstLetter = computerSelection.charAt(0).toUpperCase()
         const remainingLetters = computerSelection.slice(1)
         showResult.textContent = `You lose! ${firstLetter + remainingLetters} beats ${playerSelection}`;
-        // console.log(`Current score - ${playerScore} : ${computerScore}`);
         computerScore++;
-        // return false;
     }
 
     updateScore();
     if (isWinner()) {
-        showResult.textContent = `${isWinner()} wins!`
-        start.textContent = "Play again?"
+        showResult.textContent = `${isWinner()} wins!`;
+        showResult.style.fontSize = "4em";
+        start.textContent = "Play again?";
         start.classList.remove("show-hide");
-        console.log("We have a winner")
+        console.log("We have a winner");
     }
 }
 
@@ -53,18 +49,19 @@ function newGame() {
     computerScore = 0;
     updateScore()
     start.classList.add("show-hide");
+    showChoices.textContent = "Game started!"
+    showResult.textContent = "pick your choice"
+    showResult.style.fontSize = "2em";
     if (start.textContent === "start") eventsOnButtons()
 }
 const playerScoreEl = document.querySelector("#player-score");
 const computerScoreEl = document.querySelector("#computer-score");
 
-
 function updateScore() {
     playerScoreEl.textContent = `${playerScore}`;
     computerScoreEl.textContent = `${computerScore}`;
-    
-    
 }
+
 function isWinner() {
     if (playerScore >= 5) return 'Player'
     else if (computerScore >= 5) return 'Computer'
@@ -79,7 +76,6 @@ function eventsOnButtons() {
         })
     });
 }
+
 start = document.querySelector("#start");
 start.addEventListener('click', newGame)
-// eventsOnButtons()
-// newGame()
