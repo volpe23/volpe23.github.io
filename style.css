@@ -9,11 +9,16 @@ body {
     background: linear-gradient(109.6deg, rgb(23, 30, 39) 11.2%, rgb(14, 33, 53) 51.2%, rgb(0, 0, 0) 98.6%);
 }
 header {
+    transform: translateY(40vh);
     color: #ddd;
-    font-weight: 00;
     text-align: center;
     font-size: 86px;
     padding-top: 30px;
+    animation-name: rise-up;
+    animation-duration: 0.6s;
+    animation-delay: 2.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
 .result-bar {
     display: grid;
@@ -134,6 +139,7 @@ footer {
 }
 
 .rock {
+    opacity: 0;
     display: inline-block;
     animation-name: slide-left;
     animation-duration: 0.6s;
@@ -142,6 +148,7 @@ footer {
     animation-fill-mode: forwards;
 }
 .paper {
+    opacity: 0;
     display: inline-block;
     animation-name: drop;
     animation-duration: 0.6s;
@@ -150,6 +157,7 @@ footer {
     animation-fill-mode: forwards;
 }
 .scissors {
+    opacity: 0;
     display: inline-block;
     animation-name: slide-right;
     animation-duration: 0.6s;
@@ -157,19 +165,43 @@ footer {
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
-
-
-@keyframes slide-left {
-    0% {transform: translateX(-200%);}
-    100% {transform: translateX(0);}
+.start-animation {
+    /* visibility: hidden; */
+    opacity: 0;
+    animation-name: rise;
+    animation-duration: 1.25s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
 }
-@keyframes drop {
-    0% {transform: translateY(-200%);}
+@keyframes rise-up {
+    0% {transform: translateY(40vh);}
     100% {transform: translateY(0);}
 }
+@keyframes rise {
+    0% {transform: translateY(200%);
+        opacity: 0;}
+    
+    100% {transform: translateY(0);
+        opacity: 1;}
+}
+@keyframes slide-left {
+    0% {transform: translateX(-200%);
+        opacity: 0;}
+    100% {transform: translateX(0);
+        opacity: 1;}
+}
+@keyframes drop {
+    0% {transform: translateY(-200%);
+        opacity: 0;}
+    100% {transform: translateY(0);
+        opacity: 1;}
+}
 @keyframes slide-right {
-    0% {transform: translateX(200%);}
-    100% {transform: translateX(0);}
+    0% {transform: translateX(200%);
+        opacity: 0;}
+    100% {transform: translateX(0);
+        opacity: 1;}
 }
 
 @keyframes fall {
