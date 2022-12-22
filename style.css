@@ -6,7 +6,9 @@
     
 }
 body {
+    position: relative;
     background: linear-gradient(109.6deg, rgb(23, 30, 39) 11.2%, rgb(14, 33, 53) 51.2%, rgb(0, 0, 0) 98.6%);
+    min-height: 100vh;
 }
 header {
     transform: translateY(40vh);
@@ -99,7 +101,7 @@ header {
     justify-content: center;
     flex-direction: row;
     gap: 20px;
-    padding: 50px 0;
+    padding: 50px 0 150px 0;
 }
 .choice {
     font-size: 120px;
@@ -132,10 +134,9 @@ footer {
     text-align: center;
     color: rgb(162, 223, 243);
     font-size: 30px;
-    position: static;
-    bottom: 0;
+    position: absolute;
+    bottom: 15px;
     width: 100%;
-    padding: 50px 0;
 }
 
 .rock {
