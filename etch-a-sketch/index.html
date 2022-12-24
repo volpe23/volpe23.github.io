@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Etch a Sketch Project</title>
+</head>
+<body>
+    <main>
+        <div class="title">Etch-a-Sketch</div>
+        <div class="board">
+            <div class="menu">
+                <label for="sizeSlider">Canvas size</label>
+                <div>
+                    <input type="range" id="sizeSlider" min="0" max="100" value="30" class="slider">
+                    <input type="number" id="sizeNumber" value="30" class="slider-number">
+                </div>
+                <button type="button" id="colorButton" class="btn active">Color</button>
+                <input type="color" class="color-picker" value="#333333">
+                
+                <button type="button" id="lightBrush" class="btn">Light Brush</button>
+                <div id="lightBrushSlider">
+                    <input type="range" id="strSlider" min="1" max="10" value="3" class="slider">
+                    <input type="number" id="strNumber" value="3" class="slider-number">
+                </div>
+                <button type="button" id="randomButton" class="btn">Rainbow</button>
+                <button type="button" id="eraserButton" class="btn">Eraser</button>
+                <button type="button" id="clear" class="btn">Clear</button>
+            </div>
+            <div class="container">
+
+            </div>
+        </div>
+        
+    </main>
+    <footer>Made by @volpe23</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
